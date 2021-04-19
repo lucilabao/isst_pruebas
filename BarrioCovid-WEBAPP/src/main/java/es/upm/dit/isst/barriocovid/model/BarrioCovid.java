@@ -1,6 +1,7 @@
 package es.upm.dit.isst.barriocovid.model;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 
 
@@ -10,11 +11,18 @@ public class BarrioCovid implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	
-	
+	//variables login
 	private String email;
-	private String password;
+	private String Vendedor; //advisor del TFG
+	private String Voluntario;
+	
 	
 	private int status;
+	private byte[] productos;
+	private String password;
+	private String rol;
+	//variables a la base de datos
+
 	public String getEmail() {
 		return email;
 	}
@@ -51,16 +59,28 @@ public class BarrioCovid implements Serializable {
 		return productos;
 	}
 
+	
+	
+	public String getVendedor() {
+		return Vendedor;
+	}
+
+	public void setVendedor(String vendedor) {
+		Vendedor = vendedor;
+	}
+
+	public String getVoluntario() {
+		return Voluntario;
+	}
+
+	public void setVoluntario(String voluntario) {
+		Voluntario = voluntario;
+	}
+
 	public void setProductos(byte[] productos) {
 		this.productos = productos;
 	}
 
-	private String rol;
-	
-	//
-	
-	
-	private byte[] productos;
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -85,7 +105,10 @@ public class BarrioCovid implements Serializable {
 			return false;
 		return true;
 	}
+
 	
+
+
 	
 	
 

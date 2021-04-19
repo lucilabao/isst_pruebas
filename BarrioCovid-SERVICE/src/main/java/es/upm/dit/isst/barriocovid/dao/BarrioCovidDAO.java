@@ -9,13 +9,18 @@ import es.upm.dit.isst.barriocovid.model.BarrioCovid;
 public interface BarrioCovidDAO {
 	
 	
-//	public TFG create(TFG tfg);
-//	public TFG read(String email);
-//	public TFG update(TFG tfg);
-//	public TFG delete(TFG tfg);
+	public BarrioCovid create(BarrioCovid tfg);
+	public BarrioCovid read(String email);
+	public BarrioCovid update(BarrioCovid tfg);
+	public BarrioCovid delete(BarrioCovid tfg);
 	
 	public List<BarrioCovid>  readAll();
-	//public List<TFG>  readAll(String professor);	
+	
+	
+	//Este metodo lo utilizaran tanto el comprador, vendedor como voluntario
+	public List<BarrioCovid>  readAll(String email);
+	
+
 
 
 }

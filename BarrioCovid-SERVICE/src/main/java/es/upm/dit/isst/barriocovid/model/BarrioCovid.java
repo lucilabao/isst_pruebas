@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 
 
+//Modelo  de BarrioCovid-SERVICE
 @Entity
 public class BarrioCovid implements Serializable {
 
@@ -16,8 +17,15 @@ public class BarrioCovid implements Serializable {
 	@Id
 	private String email;
 	private String password;
-	
+	private String rol;
+	//variables a la base de datos
+	private String Vendedor; //advisor del TFG
+	private String Voluntario;
 	private int status;
+	
+	@Lob
+	private byte[] productos;
+	
 	public String getEmail() {
 		return email;
 	}
@@ -58,12 +66,27 @@ public class BarrioCovid implements Serializable {
 		this.productos = productos;
 	}
 
-	private String rol;
+	
 	
 	//
 	
-	@Lob
-	private byte[] productos;
+	
+	public String getVendedor() {
+		return Vendedor;
+	}
+
+	public void setVendedor(String vendedor) {
+		Vendedor = vendedor;
+	}
+
+	public String getVoluntario() {
+		return Voluntario;
+	}
+
+	public void setVoluntario(String voluntario) {
+		Voluntario = voluntario;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
