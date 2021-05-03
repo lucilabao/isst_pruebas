@@ -1,9 +1,7 @@
 package es.upm.dit.isst.pedido.rest;
-
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
-
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -47,6 +45,28 @@ public class PEDIDOResource {
 					return Response.created(uri).build();
 		    }
 			return Response.status(Response.Status.NOT_FOUND).build();
+		}
+		
+		@GET
+		@Path("{id}")
+		@Produces(MediaType.APPLICATION_JSON)
+		public Response read(@PathParam("id") String id) {
+			PEDIDO p = PEDIDODAOImplementation.getInstance().read(id);
+			if (p == null)
+				return Response.status(Response.Status.NOT_FOUND).build();
+			return Response.ok(p, MediaType.APPLICATION_JSON).build();
+		} 
+		@POST
+		@Consumes(MediaType.APPLICATION_JSON)
+		@Path("{id}")
+		public Response update(@PathParam("id") String id, PEDIDO p) {
+			System.out.println("Update request for" + id + " " +
+					p.toString());
+			PEDIDO told = PEDIDODAOImplementation.getInstance().read(id);
+			if ((told == null) || (!
+					told.getComprador().contentEquals(p.getComprador())))
+				return Response.notModified().build();
+			PEDIDODAOImplementation.getInstance().update(p); return Response.ok().build(); 
 		}
 		@DELETE
 		@Path("{id}")

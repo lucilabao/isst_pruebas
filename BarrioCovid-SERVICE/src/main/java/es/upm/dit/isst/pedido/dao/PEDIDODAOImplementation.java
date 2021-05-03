@@ -1,4 +1,4 @@
-package es.upm.dit.isst.pedido.dao;
+ package es.upm.dit.isst.pedido.dao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +33,7 @@ public class PEDIDODAOImplementation implements PEDIDODAO{
 		return pedido;
 	 }
 	 
-	 public PEDIDO read (String comprador) {
+	 public PEDIDO read(String comprador) {
 		 Session session = SessionFactoryService.get().openSession();
 		 session.beginTransaction();
 		 PEDIDO pedido = session.get(PEDIDO.class, comprador);
@@ -83,10 +83,12 @@ public class PEDIDODAOImplementation implements PEDIDODAO{
 	 public List<PEDIDO> readAllVoluntario(String voluntario) {
 		List<PEDIDO> res = new ArrayList<PEDIDO>();
 		for(PEDIDO pedido : this.readAll()) {
-			if(pedido.getVendedor().contentEquals(voluntario)) {
+			if(pedido.getVoluntario().contentEquals(voluntario)) {
 				res.add(pedido);
 			}
 		}
 		return res;
 	}
+	 
+	 
 }
