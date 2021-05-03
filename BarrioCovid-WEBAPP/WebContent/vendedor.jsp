@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>VENDEDOR</title>
+<link href="pedido.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <table border="1">

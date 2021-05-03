@@ -6,20 +6,21 @@
 <head>
 <meta charset="UTF-8">
 <title>VOLUNTARIO</title>
+<link href="pedido.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <table border="1">
 	<tr>
 		<th>ID</th>
 		<th>Comprador</th>
-		<th>Voluntario</th>
+		<th>Vendedor</th>
 		<th>Estado</th>
 	</tr>
 	<c:forEach items="${pedidos}" var="pedidoi">
 		<tr>
 			<td>${pedidoi.idped}</td>
 			<td>${pedidoi.comprador}</td>
-			<td>${pedidoi.voluntario}</td>
+			<td>${pedidoi.vendedor}</td>
 			<td>${pedidoi.status}</td>
 			<c:if test="${pedidoi.status == 2}">
 			        <td>

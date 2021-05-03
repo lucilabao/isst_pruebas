@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <title>COMPRADOR</title>
+<link href="pedido.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<form action="FormHacerPedido">
