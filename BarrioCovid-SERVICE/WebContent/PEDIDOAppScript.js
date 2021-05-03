@@ -12,13 +12,13 @@ $(document).ready(function(){
                 var comprador = response[i].comprador;
                 var vendedor = response[i].vendedor;
                 var voluntario = response[i].voluntario;
-                var id_pedido = response[i].id_pedido;
+                var idped = response[i].idped;
                 var status = response[i].status;
                 var tr_str = "<tr>" +
                     "<td align='center'>" + comprador + "</td>" +
                     "<td align='center'>" + vendedor + "</td>" +
                     "<td align='center'>" + voluntario + "</td>" +
-                    "<td align='center'>" + id_pedido + "</td>" +
+                    "<td align='center'>" + idped + "</td>" +
                     "<td align='center'>" + status + "</td>" +
                     "</tr>";
                 $("#userTable tbody").append(tr_str);

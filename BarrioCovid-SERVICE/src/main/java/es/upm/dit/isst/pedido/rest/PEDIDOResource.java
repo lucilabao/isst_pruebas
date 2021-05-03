@@ -18,23 +18,11 @@ import es.upm.dit.isst.pedido.model.PEDIDO;
 
 @Path("/PEDIDOs")
 public class PEDIDOResource {
-
+		//PEDIDOS
 		@GET
 		@Produces(MediaType.APPLICATION_JSON)
 		public List<PEDIDO> readAll () {
 			return PEDIDODAOImplementation.getInstance().readAll();
-		}
-		@GET
-		@Path("vendedor/{id}")
-		@Produces(MediaType.APPLICATION_JSON)
-		public List<PEDIDO> readAllVendedor (@PathParam("id") String id) {
-			return PEDIDODAOImplementation.getInstance().readAllVendedor(id);
-		}
-		@GET
-		@Path("voluntario/{id}")
-		@Produces(MediaType.APPLICATION_JSON)
-		public List<PEDIDO> readAllVoluntario (@PathParam("id") String id) {
-			return PEDIDODAOImplementation.getInstance().readAllVoluntario(id);
 		}
 		@POST
 		@Consumes(MediaType.APPLICATION_JSON)
@@ -46,7 +34,7 @@ public class PEDIDOResource {
 		    }
 			return Response.status(Response.Status.NOT_FOUND).build();
 		}
-		
+		//PEDIDOS/id
 		@GET
 		@Path("{id}")
 		@Produces(MediaType.APPLICATION_JSON)
@@ -55,7 +43,7 @@ public class PEDIDOResource {
 			if (p == null)
 				return Response.status(Response.Status.NOT_FOUND).build();
 			return Response.ok(p, MediaType.APPLICATION_JSON).build();
-		} 
+		}
 		@POST
 		@Consumes(MediaType.APPLICATION_JSON)
 		@Path("{id}")
@@ -77,6 +65,21 @@ public class PEDIDOResource {
 			PEDIDODAOImplementation.getInstance().delete(rold);
 			return Response.ok().build();
 		}
+		//PEDIDOS/vendedor/id
+		@GET
+		@Path("vendedor/{id}")
+		@Produces(MediaType.APPLICATION_JSON)
+		public List<PEDIDO> readAllVendedor (@PathParam("id") String id) {
+			return PEDIDODAOImplementation.getInstance().readAllVendedor(id);
+		}
+		//PEDIDOS/voluntario/id
+		@GET
+		@Path("voluntario/{id}")
+		@Produces(MediaType.APPLICATION_JSON)
+		public List<PEDIDO> readAllVoluntario (@PathParam("id") String id) {
+			return PEDIDODAOImplementation.getInstance().readAllVoluntario(id);
+		}
+
 
 }
 
