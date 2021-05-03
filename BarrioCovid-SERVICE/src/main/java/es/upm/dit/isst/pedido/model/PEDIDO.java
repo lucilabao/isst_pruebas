@@ -45,8 +45,6 @@ public class PEDIDO implements Serializable{
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public PEDIDO() {
-	}
 	
 	
 }
