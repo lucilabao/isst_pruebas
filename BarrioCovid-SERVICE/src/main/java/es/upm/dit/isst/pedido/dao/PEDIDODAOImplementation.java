@@ -64,7 +64,7 @@ public class PEDIDODAOImplementation implements PEDIDODAO{
 		 List<PEDIDO> pedidos = new ArrayList<PEDIDO>();
 		 Session session = SessionFactoryService.get().openSession();
 		 session.beginTransaction();
-		 pedidos.addAll(session.createQuery("from PEDIDOS").list());
+		 pedidos.addAll(session.createQuery("from PEDIDOs").list());
 		 session.getTransaction().commit();
 		 session.close();
 		 return pedidos;

@@ -18,7 +18,7 @@ import es.upm.dit.isst.pedido.model.PEDIDO;
 
 @Path("/PEDIDOs")
 public class PEDIDOResource {
-		//PEDIDOS
+		//PEDIDOs
 		@GET
 		@Produces(MediaType.APPLICATION_JSON)
 		public List<PEDIDO> readAll () {
@@ -34,7 +34,7 @@ public class PEDIDOResource {
 		    }
 			return Response.status(Response.Status.NOT_FOUND).build();
 		}
-		//PEDIDOS/id
+		//PEDIDOs/id
 		@GET
 		@Path("{id}")
 		@Produces(MediaType.APPLICATION_JSON)
@@ -65,14 +65,14 @@ public class PEDIDOResource {
 			PEDIDODAOImplementation.getInstance().delete(rold);
 			return Response.ok().build();
 		}
-		//PEDIDOS/vendedor/id
+		//PEDIDOs/vendedor/id
 		@GET
 		@Path("vendedor/{id}")
 		@Produces(MediaType.APPLICATION_JSON)
 		public List<PEDIDO> readAllVendedor (@PathParam("id") String id) {
 			return PEDIDODAOImplementation.getInstance().readAllVendedor(id);
 		}
-		//PEDIDOS/voluntario/id
+		//PEDIDOs/voluntario/id
 		@GET
 		@Path("voluntario/{id}")
 		@Produces(MediaType.APPLICATION_JSON)
