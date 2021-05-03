@@ -26,15 +26,15 @@ public class PEDIDOResource {
 		//@GET
 		//@Path("professor/{id}")
 		//@Produces(MediaType.APPLICATION_JSON)
-		//public List<TFG> readAll (@PathParam("id") String id) {
-		//	return TFGDAOImplementation.getInstance().readAll(id);
+		//public List<PEDIDO> readAll (@PathParam("id") String id) {
+		//	return PEDIDODAOImplementation.getInstance().readAll(id);
 		//}
 		@POST
 		@Consumes(MediaType.APPLICATION_JSON)
 		public Response create(PEDIDO pnew) throws URISyntaxException {
 			PEDIDO p = PEDIDODAOImplementation.getInstance().create(pnew);
 			if (p != null) {
-				URI uri = new URI("/COVID-SERVICE/rest/PEDIDOs/" + p.getComprador());
+				URI uri = new URI("/BarrioCovid-SERVICE/rest/PEDIDOs/" + p.getComprador());
 					return Response.created(uri).build();
 		    }
 			return Response.status(Response.Status.NOT_FOUND).build();
