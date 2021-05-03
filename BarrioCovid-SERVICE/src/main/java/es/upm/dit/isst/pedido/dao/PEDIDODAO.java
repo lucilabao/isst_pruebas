@@ -9,5 +9,6 @@ public interface PEDIDODAO {
 	public PEDIDO update(PEDIDO pedido);
 	public PEDIDO delete(PEDIDO pedido);
 	public List<PEDIDO> readAll();
-	public List<PEDIDO> readAll(String professor);
+	public List<PEDIDO> readAllVendedor(String vendedor);
+	public List<PEDIDO> readAllVoluntario(String voluntario);
 }

@@ -70,10 +70,20 @@ public class PEDIDODAOImplementation implements PEDIDODAO{
 		 return pedidos;
 	 }
 	 @Override
-	 public List<PEDIDO> readAll(String vendedor) {
+	 public List<PEDIDO> readAllVendedor(String vendedor) {
 		List<PEDIDO> res = new ArrayList<PEDIDO>();
 		for(PEDIDO pedido : this.readAll()) {
 			if(pedido.getVendedor().contentEquals(vendedor)) {
+				res.add(pedido);
+			}
+		}
+		return res;
+	}
+	 @Override
+	 public List<PEDIDO> readAllVoluntario(String voluntario) {
+		List<PEDIDO> res = new ArrayList<PEDIDO>();
+		for(PEDIDO pedido : this.readAll()) {
+			if(pedido.getVendedor().contentEquals(voluntario)) {
 				res.add(pedido);
 			}
 		}
