@@ -6,13 +6,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 
-
 //Modelo  de BarrioCovid-SERVICE
 @Entity
 public class BarrioCovid implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
 	
 	@Id
 	private String email;
@@ -66,11 +64,6 @@ public class BarrioCovid implements Serializable {
 		this.productos = productos;
 	}
 
-	
-	
-	//
-	
-	
 	public String getVendedor() {
 		return Vendedor;
 	}
@@ -87,32 +80,6 @@ public class BarrioCovid implements Serializable {
 		Voluntario = voluntario;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((email == null) ? 0 : email.hashCode());
-		return result;
-	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		BarrioCovid other = (BarrioCovid) obj;
-		if (email == null) {
-			if (other.email != null)
-				return false;
-		} else if (!email.equals(other.email))
-			return false;
-		return true;
-	}
-	
-	
-	
 
 }
