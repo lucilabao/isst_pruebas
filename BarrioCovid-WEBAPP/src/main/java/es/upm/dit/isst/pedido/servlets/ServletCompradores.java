@@ -12,20 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 public class ServletCompradores extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    public ServletCompradores() {
-        super();
-        // TODO Auto-generated constructor stub
+	@Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+                  throws ServletException, IOException {
+           req.getSession().invalidate();
+            getServletContext().getRequestDispatcher("/comprador.jsp").forward(req,resp);
     }
-
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
 
 }
