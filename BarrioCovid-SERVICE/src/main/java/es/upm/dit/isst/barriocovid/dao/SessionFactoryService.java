@@ -1,4 +1,4 @@
-package es.upm.dit.isst.pedido.dao;
+package es.upm.dit.isst.barriocovid.dao;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 

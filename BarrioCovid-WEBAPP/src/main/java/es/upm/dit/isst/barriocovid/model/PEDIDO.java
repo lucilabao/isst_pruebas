@@ -1,4 +1,4 @@
-package es.upm.dit.isst.pedido.model;
+package es.upm.dit.isst.barriocovid.model;
 
 import java.io.Serializable;
 import javax.persistence.Entity;

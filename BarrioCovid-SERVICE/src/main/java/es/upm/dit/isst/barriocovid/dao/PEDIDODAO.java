@@ -1,6 +1,7 @@
-package es.upm.dit.isst.pedido.dao;
+package es.upm.dit.isst.barriocovid.dao;
 import java.util.List;
-import es.upm.dit.isst.pedido.model.PEDIDO;
+
+import es.upm.dit.isst.barriocovid.model.PEDIDO;
 
 public interface PEDIDODAO {
 

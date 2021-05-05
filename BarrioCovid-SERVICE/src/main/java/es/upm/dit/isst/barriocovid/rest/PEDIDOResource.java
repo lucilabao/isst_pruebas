@@ -1,4 +1,5 @@
-package es.upm.dit.isst.pedido.rest;
+package es.upm.dit.isst.barriocovid.rest;
+
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -12,8 +13,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import es.upm.dit.isst.pedido.dao.PEDIDODAOImplementation;
-import es.upm.dit.isst.pedido.model.PEDIDO;
+import es.upm.dit.isst.barriocovid.dao.PEDIDODAOImplementation;
+import es.upm.dit.isst.barriocovid.model.PEDIDO;
 
 
 @Path("/PEDIDOs")

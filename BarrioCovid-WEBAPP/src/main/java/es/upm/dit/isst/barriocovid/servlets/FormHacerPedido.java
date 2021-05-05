@@ -1,4 +1,4 @@
-package es.upm.dit.isst.pedido.servlets;
+package es.upm.dit.isst.barriocovid.servlets;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -14,8 +14,8 @@ import javax.ws.rs.core.Response;
 
 import org.glassfish.jersey.client.ClientConfig;
 
-import es.upm.dit.isst.pedido.model.PEDIDO;
-import es.upm.dit.isst.pedido.servlets.URLHelper;
+import es.upm.dit.isst.barriocovid.model.PEDIDO;
+import es.upm.dit.isst.barriocovid.servlets.URLHelper;
 
 @WebServlet("/FormHacerPedido")
 public class FormHacerPedido extends HttpServlet {

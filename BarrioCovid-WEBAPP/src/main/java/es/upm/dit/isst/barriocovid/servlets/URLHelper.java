@@ -1,4 +1,4 @@
-package es.upm.dit.isst.pedido.servlets;
+package es.upm.dit.isst.barriocovid.servlets;
 
 public class URLHelper {
     public static String getURL() {

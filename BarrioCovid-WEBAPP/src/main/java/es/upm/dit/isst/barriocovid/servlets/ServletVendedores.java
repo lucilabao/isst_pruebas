@@ -1,4 +1,4 @@
-package es.upm.dit.isst.pedido.servlets;
+package es.upm.dit.isst.barriocovid.servlets;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
