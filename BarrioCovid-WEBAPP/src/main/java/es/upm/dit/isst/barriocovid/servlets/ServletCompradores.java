@@ -13,9 +13,7 @@ public class ServletCompradores extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-                  throws ServletException, IOException {
-           req.getSession().invalidate();
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
             getServletContext().getRequestDispatcher("/comprador.jsp").forward(req,resp);
     }
 
