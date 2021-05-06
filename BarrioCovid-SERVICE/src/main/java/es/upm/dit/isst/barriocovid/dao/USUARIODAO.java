@@ -6,12 +6,13 @@ import es.upm.dit.isst.barriocovid.model.USUARIO;
 
 public interface USUARIODAO {
 
-	public USUARIO create(USUARIO usuario);
-	public USUARIO read(String email);
-	public USUARIO update(USUARIO usuario);
-	public USUARIO delete(USUARIO usuario);
-	public List<USUARIO> readAll();
-	public List<USUARIO> readAllVoluntario(String voluntario);
-	public List<USUARIO> readAllVendedor(String vendedor);
+	public USUARIO createUSUARIO(USUARIO usuario);
+	public USUARIO readUSUARIO(String email);
+	public USUARIO updateUSUARIO(USUARIO usuario);
+	public USUARIO deleteUSUARIO(USUARIO usuario);
+	public int readAllUSUARIONumber();
+	public List<USUARIO> readAllUSUARIO();
+	public List<USUARIO> readAllUSUARIOVoluntario(String voluntario);
+	public List<USUARIO> readAllUSUARIOVendedor(String vendedor);
 
 }

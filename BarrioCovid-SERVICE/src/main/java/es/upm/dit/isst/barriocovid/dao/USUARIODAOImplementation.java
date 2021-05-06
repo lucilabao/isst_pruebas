@@ -19,7 +19,7 @@ public class USUARIODAOImplementation implements USUARIODAO{
 	  }
 	 
 	 @Override
-	 public USUARIO create(USUARIO usuario) {
+	 public USUARIO createUSUARIO(USUARIO usuario) {
 		  Session session = SessionFactoryService.get().openSession();
 		  session.beginTransaction();
 		  	try {
@@ -32,7 +32,7 @@ public class USUARIODAOImplementation implements USUARIODAO{
 		return usuario;
 	 }
 	 
-	 public USUARIO read(String email) {
+	 public USUARIO readUSUARIO(String email) {
 		 Session session = SessionFactoryService.get().openSession();
 		 session.beginTransaction();
 		 USUARIO usuario = session.get(USUARIO.class, email);
@@ -41,7 +41,7 @@ public class USUARIODAOImplementation implements USUARIODAO{
 		 return usuario;
 	}
 	 
-	 public USUARIO update(USUARIO usuario) {
+	 public USUARIO updateUSUARIO(USUARIO usuario) {
 		 Session session = SessionFactoryService.get().openSession();
 		 session.beginTransaction();
 		 session.saveOrUpdate(usuario);
@@ -49,7 +49,7 @@ public class USUARIODAOImplementation implements USUARIODAO{
 		 session.close();
 		 return usuario;
 	 } 
-	 public USUARIO delete(USUARIO usuario) {
+	 public USUARIO deleteUSUARIO(USUARIO usuario) {
 		 Session session = SessionFactoryService.get().openSession();
 		 session.beginTransaction();
 		 session.delete(usuario);
@@ -57,9 +57,19 @@ public class USUARIODAOImplementation implements USUARIODAO{
 		 session.close();
 		 return usuario;
 	}
+	 @Override
+	 public int readAllUSUARIONumber() {
+		 int numeroUsuarios;
+		 Session session = SessionFactoryService.get().openSession();
+		 session.beginTransaction();
+		 numeroUsuarios = session.createQuery("from USUARIO").list().size();
+		 session.getTransaction().commit();
+		 session.close();
+		 return numeroUsuarios;
+	 }
 	 @SuppressWarnings("unchecked")
 	 @Override
-	 public List<USUARIO> readAll() {
+	 public List<USUARIO> readAllUSUARIO() {
 		 List<USUARIO> usuarios = new ArrayList<USUARIO>();
 		 Session session = SessionFactoryService.get().openSession();
 		 session.beginTransaction();
@@ -69,9 +79,9 @@ public class USUARIODAOImplementation implements USUARIODAO{
 		 return usuarios;
 	 }
 	 @Override
-	 public List<USUARIO> readAllVoluntario(String voluntario) {
+	 public List<USUARIO> readAllUSUARIOVoluntario(String voluntario) {
 		List<USUARIO> res = new ArrayList<USUARIO>();
-		for(USUARIO usuario : this.readAll()) {
+		for(USUARIO usuario : this.readAllUSUARIO()) {
 			if(usuario.getRol().contentEquals(voluntario)) {
 				res.add(usuario);
 			}
@@ -79,9 +89,9 @@ public class USUARIODAOImplementation implements USUARIODAO{
 		return res;
 	}
 	 @Override
-	 public List<USUARIO> readAllVendedor(String vendedor) {
+	 public List<USUARIO> readAllUSUARIOVendedor(String vendedor) {
 		List<USUARIO> res = new ArrayList<USUARIO>();
-		for(USUARIO usuario : this.readAll()) {
+		for(USUARIO usuario : this.readAllUSUARIO()) {
 			if(usuario.getRol().contentEquals(vendedor)) {
 				res.add(usuario);
 			}

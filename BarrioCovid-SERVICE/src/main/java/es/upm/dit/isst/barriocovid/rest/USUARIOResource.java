@@ -13,21 +13,24 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import org.hibernate.Session;
+
+import es.upm.dit.isst.barriocovid.dao.SessionFactoryService;
 import es.upm.dit.isst.barriocovid.dao.USUARIODAOImplementation;
 import es.upm.dit.isst.barriocovid.model.USUARIO;
 
-@Path("/PEDIDOs")
+@Path("/USUARIOs")
 public class USUARIOResource {
 		//USUARIOs
 		@GET
 		@Produces(MediaType.APPLICATION_JSON)
-		public List<USUARIO> readAll () {
-			return USUARIODAOImplementation.getInstance().readAll();
+		public List<USUARIO> readAllUSUARIO() {
+			return USUARIODAOImplementation.getInstance().readAllUSUARIO();
 		}
 		@POST
 		@Consumes(MediaType.APPLICATION_JSON)
-		public Response create(USUARIO unew) throws URISyntaxException {
-			USUARIO u = USUARIODAOImplementation.getInstance().create(unew);
+		public Response createUSUARIO(USUARIO unew) throws URISyntaxException {
+			USUARIO u = USUARIODAOImplementation.getInstance().createUSUARIO(unew);
 			if (u != null) {
 				URI uri = new URI("/BarrioCovid-SERVICE/rest/USUARIOs/" + u.getEmail());
 					return Response.created(uri).build();
@@ -38,8 +41,8 @@ public class USUARIOResource {
 		@GET
 		@Path("{id}")
 		@Produces(MediaType.APPLICATION_JSON)
-		public Response read(@PathParam("id") String id) {
-			USUARIO u = USUARIODAOImplementation.getInstance().read(id);
+		public Response readUSUARIO(@PathParam("id") String id) {
+			USUARIO u = USUARIODAOImplementation.getInstance().readUSUARIO(id);
 			if (u == null)
 				return Response.status(Response.Status.NOT_FOUND).build();
 			return Response.ok(u, MediaType.APPLICATION_JSON).build();
@@ -47,36 +50,42 @@ public class USUARIOResource {
 		@POST
 		@Consumes(MediaType.APPLICATION_JSON)
 		@Path("{id}")
-		public Response update(@PathParam("id") String id, USUARIO u) {
+		public Response updateUSUARIO(@PathParam("id") String id, USUARIO u) {
 			System.out.println("Update request for" + id + " " + u.toString());
-			USUARIO told = USUARIODAOImplementation.getInstance().read(id);
+			USUARIO told = USUARIODAOImplementation.getInstance().readUSUARIO(id);
 			if ((told == null) || (!
 					told.getEmail().contentEquals(u.getEmail())))
 				return Response.notModified().build();
-			USUARIODAOImplementation.getInstance().update(u); return Response.ok().build(); 
+			USUARIODAOImplementation.getInstance().updateUSUARIO(u); return Response.ok().build(); 
 		}
 		@DELETE
 		@Path("{id}")
-		public Response delete(@PathParam("id") String id) {
-			USUARIO rold = USUARIODAOImplementation.getInstance().read(id);
+		public Response deleteUSUARIO(@PathParam("id") String id) {
+			USUARIO rold = USUARIODAOImplementation.getInstance().readUSUARIO(id);
 			if (rold == null)
 				return Response.notModified().build();
-			USUARIODAOImplementation.getInstance().delete(rold);
+			USUARIODAOImplementation.getInstance().deleteUSUARIO(rold);
 			return Response.ok().build();
 		}
-		//PEDIDOs/voluntario/id
+		//USUARIOs/todosUsuarios/id
+		@GET
+		@Path("todosUsuarios")
+	    public int readAllUSUARIONumber() {
+		    return USUARIODAOImplementation.getInstance().readAllUSUARIONumber();
+	    }
+		//USUARIOs/voluntario/id
 		@GET
 		@Path("voluntario/{id}")
 		@Produces(MediaType.APPLICATION_JSON)
-		public List<USUARIO> readAllVoluntario (@PathParam("id") String id) {
-			return USUARIODAOImplementation.getInstance().readAllVoluntario(id);
+		public List<USUARIO> readAllUSUARIOVoluntario(@PathParam("id") String id) {
+			return USUARIODAOImplementation.getInstance().readAllUSUARIOVoluntario(id);
 		}
 		//USUARIOs/vendedor/id
 		@GET
 		@Path("vendedor/{id}")
 		@Produces(MediaType.APPLICATION_JSON)
-		public List<USUARIO> readAllVendedor (@PathParam("id") String id) {
-			return USUARIODAOImplementation.getInstance().readAllVendedor(id);
+		public List<USUARIO> readAllUSUARIOVendedor (@PathParam("id") String id) {
+			return USUARIODAOImplementation.getInstance().readAllUSUARIOVendedor(id);
 		}
 
 

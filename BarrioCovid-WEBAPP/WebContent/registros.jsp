@@ -20,7 +20,7 @@
 		<input type="hidden" id="rol" name="rol" value="comprador"> 
 		<input type="hidden" id="pedidosRealizados" name="pedidosRealizados" value=0>
 		<input type="hidden" id="pedidosEntregados" name="pedidosEntregados" value=0>  
-		<input type="text" id="idUsuario" name="idUsuario">
+		<input type="hidden" id="idUsuario" name="idUsuario">
 		<button type="submit">Sign in</button>
 	</form>
 	
@@ -33,7 +33,7 @@
 		<input type="hidden" id="rol" name="rol" value="voluntario"> 
 		<input type="hidden" id="pedidosRealizados" name="pedidosRealizados" value=0>
 		<input type="hidden" id="pedidosEntregados" name="pedidosEntregados" value=0>  
-		<input type="text" id="idUsuario" name="idUsuario">
+		<input type="hidden" id="idUsuario" name="idUsuario">
 		<button type="submit">Sign in</button>
 	</form>
 	
@@ -44,9 +44,9 @@
 		<input type="text" id="zona" name="zona" placeholder="Zona"> 
 		<input type="text" id="direccion" name="direccion" placeholder="Direccion">
 		<input type="hidden" id="rol" name="rol" value="vendedor"> 
-		<input type="hidden" id="pedidosRealizados" name="pedidosRealizados" value=null>
-		<input type="hidden" id="pedidosEntregados" name="pedidosEntregados" value=null>  
-		<input type="text" id="idUsuario" name="idUsuario">
+		<input type="hidden" id="pedidosRealizados" name="pedidosRealizados" value=-1>
+		<input type="hidden" id="pedidosEntregados" name="pedidosEntregados" value=-1>  
+		<input type="hidden" id="idUsuario" name="idUsuario">
 		<button type="submit">Sign in</button>
 	</form>
 
