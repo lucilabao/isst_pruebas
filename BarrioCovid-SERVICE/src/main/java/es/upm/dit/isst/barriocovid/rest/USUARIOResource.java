@@ -70,6 +70,7 @@ public class USUARIOResource {
 		//USUARIOs/todosUsuarios/id
 		@GET
 		@Path("todosUsuarios")
+		@Produces(MediaType.APPLICATION_JSON)
 	    public int readAllUSUARIONumber() {
 		    return USUARIODAOImplementation.getInstance().readAllUSUARIONumber();
 	    }
