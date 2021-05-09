@@ -2,6 +2,8 @@ package es.upm.dit.isst.barriocovid.model;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
@@ -16,6 +18,7 @@ public class USUARIO implements Serializable{
 	private String	rol;
 	private int pedidosRealizados;
 	private int pedidosEntregados;
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int idUsuario;
 	
 	public USUARIO() {
@@ -82,9 +85,9 @@ public class USUARIO implements Serializable{
 		return idUsuario;
 	}
 
-	public void setIdUsuario(int idUsuario) {
-		this.idUsuario = idUsuario;
-	}
+	//public void setIdUsuario(int idUsuario) {
+	//	this.idUsuario = idUsuario;
+	//}
 
 	@Override
 	public String toString() {

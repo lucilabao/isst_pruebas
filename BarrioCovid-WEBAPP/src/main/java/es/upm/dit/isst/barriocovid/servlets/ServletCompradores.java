@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 @WebServlet("/ServletCompradores")
 @DeclareRoles("comprador")
 @ServletSecurity(@HttpConstraint(rolesAllowed={"comprador"}))
@@ -20,7 +19,7 @@ public class ServletCompradores extends HttpServlet {
 
 	@Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-            getServletContext().getRequestDispatcher("/comprador.jsp").forward(req,resp);
+		getServletContext().getRequestDispatcher("/comprador.jsp").forward(req,resp);
     }
 
 }
