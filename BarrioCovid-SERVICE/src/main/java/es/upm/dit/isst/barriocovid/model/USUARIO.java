@@ -13,7 +13,7 @@ public class USUARIO implements Serializable{
 	private String password;
 	private String zona;
 	private String direccion;
-	private String	rol;
+	private String rol;
 	private int pedidosRealizados;
 	private int pedidosEntregados;
 	private int idUsuario;

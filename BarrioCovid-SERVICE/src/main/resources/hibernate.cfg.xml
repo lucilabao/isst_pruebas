@@ -15,5 +15,6 @@
                 <property name="hbm2ddl.auto">update</property>
                 <mapping class="es.upm.dit.isst.barriocovid.model.PEDIDO"/>
                 <mapping class="es.upm.dit.isst.barriocovid.model.USUARIO"/>
+                <mapping class="es.upm.dit.isst.barriocovid.model.ROL"/>
         </session-factory>
 </hibernate-configuration> 
