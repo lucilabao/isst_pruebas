@@ -36,5 +36,6 @@
 	</c:forEach>
 </table>
 </body>
-<%@ include file="FormLogout.jsp"%>
+<%@ include file="logout.jsp"%>
+<%@ include file="Footer.jsp"%>
 </html>

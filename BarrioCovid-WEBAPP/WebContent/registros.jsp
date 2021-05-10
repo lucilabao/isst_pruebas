@@ -8,6 +8,7 @@
 <body>
 
 	<h1>Bienvenido al servicio BarrioCovid</h1>
+	<p>Texto oficial sobre protección de datos...</p>
 
 	<img src="img/barrio.png" width="200" height="200">
 	
