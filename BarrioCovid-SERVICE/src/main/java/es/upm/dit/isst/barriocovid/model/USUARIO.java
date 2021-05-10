@@ -2,13 +2,14 @@ package es.upm.dit.isst.barriocovid.model;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class USUARIO implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
-	@Id
 	private String email;
 	private String password;
 	private String zona;
@@ -16,6 +17,8 @@ public class USUARIO implements Serializable{
 	private String rol;
 	private int pedidosRealizados;
 	private int pedidosEntregados;
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idUsuario;
 	
 	public USUARIO() {
