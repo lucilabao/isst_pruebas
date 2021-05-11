@@ -4,16 +4,15 @@
                 
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
                 
-        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
                 
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
                 
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
-        <wb-resource deploy-path="/" source-path="/WebContent"/>
                 
         <property name="context-root" value="BarrioCovid-SERVICE"/>
                 
-        <property name="java-output-path" value="/BarrioCovid-SERVICE/build/classes"/>
+        <property name="java-output-path" value="/BarrioCovid-SERVICE/target/classes"/>
             
     </wb-module>
     
