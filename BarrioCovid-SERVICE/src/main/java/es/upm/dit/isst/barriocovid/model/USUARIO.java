@@ -10,7 +10,6 @@ import javax.persistence.Id;
 public class USUARIO implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
-	@Id
 	private String email;
 	private String password;
 	private String zona;
@@ -18,7 +17,11 @@ public class USUARIO implements Serializable{
 	private String rol;
 	private int pedidosRealizados;
 	private int pedidosEntregados;
-	@GeneratedValue(strategy=GenerationType.AUTO)
+
+	// QUITAAAAR
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+
 	private int idUsuario;
 	
 	public USUARIO() {

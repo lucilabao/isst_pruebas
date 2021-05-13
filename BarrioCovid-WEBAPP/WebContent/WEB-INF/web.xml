@@ -1,6 +1,7 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
-  <display-name>BarrioCovid</display-name>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+  <display-name>BarrioCovid-WEBAPP</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
@@ -9,6 +10,16 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <!-- Declaración del mecanismo de autenticación. -->
+  <security-role>
+    <role-name>comprador</role-name>
+  </security-role>
+  <security-role>
+    <role-name>voluntario</role-name>
+  </security-role>
+  <security-role>
+    <role-name>vendedor</role-name>
+  </security-role>
   <login-config>
     <auth-method>FORM</auth-method>
     <form-login-config>
@@ -16,16 +27,5 @@
       <form-error-page>/error.html</form-error-page>   
     </form-login-config> 
   </login-config>
-  <security-role>
-        <description/>
-        <role-name>comprador</role-name>
-    </security-role>
-    <security-role>
-        <description/>
-        <role-name>voluntario</role-name>
-    </security-role>
-    <security-role>
-        <description/>
-        <role-name>vendedor</role-name>
-    </security-role>
+  
 </web-app>
