@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class FormLogout
  */
-@WebServlet("/FormLogout")
+@WebServlet("/FormLogoutServlet")
 public class FormLogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	

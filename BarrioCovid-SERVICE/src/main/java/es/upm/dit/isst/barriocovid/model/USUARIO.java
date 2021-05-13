@@ -17,6 +17,7 @@ public class USUARIO implements Serializable{
 	private String rol;
 	private int pedidosRealizados;
 	private int pedidosEntregados;
+	// QUITAAAAR
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idUsuario;
