@@ -46,7 +46,6 @@ public class FormRegistroUsuarioServlet extends HttpServlet {
 		usuario.setRol(request.getParameter("rol"));
 		usuario.setPedidosRealizados(Integer.parseInt(request.getParameter("pedidosRealizados")));
 		usuario.setPedidosEntregados(Integer.parseInt(request.getParameter("pedidosEntregados")));
-		usuario.setIdUsuario(numeroUsuarios + 1);
 		Response r = client.target(URLHelperUSUARIO.getURL()).request()
 				.post(Entity.entity(usuario, MediaType.APPLICATION_JSON), Response.class);
 		System.out.println(r.getStatus());
